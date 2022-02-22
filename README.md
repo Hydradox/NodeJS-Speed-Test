@@ -15,11 +15,11 @@ npm install
 
 Start the program
 ```sh
-# Run with PM2 in cluster mode
+# Run with PM2 in cluster mode _(Only Linux, Windows will not work)_
 npm start
 # and stop with PM2
 npm stop
 
-# Or run in test mode with console logging
+# Or run in test mode with console logging _(Windows and Linux working, but without cluster)_
 npm test
 ```
