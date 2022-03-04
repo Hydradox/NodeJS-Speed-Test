@@ -2,10 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import express from 'express';
 import formidable from 'formidable';
-
 import { Server } from 'socket.io';
-import { createAdapter } from "@socket.io/cluster-adapter";
-import { setupWorker } from "@socket.io/sticky";
 
 const app = express();
 const uploadedFiles = path.join(process.cwd(), '/uploaded_files');
@@ -15,10 +12,7 @@ var server = app.listen(3000, () => {
 });
 
 const io = new Server(server);
-io.adapter(createAdapter());
-setupWorker(io);
 
-console.log(process.platform)
 
 app.use(express.static(path.join(process.cwd(), '/public')));
 
